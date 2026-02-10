@@ -309,7 +309,7 @@ function(apply_cpu_backend_common_options libname pkg_name pkg_install is_static
   endif()
   if (NOT ${APPLE})
     target_compile_options(${target_name} PRIVATE -mno-avx512f)
-  endif
+  endif()
   target_include_directories(${target_name} PRIVATE ${Python_NumPy_INCLUDE_DIR})
   target_compile_definitions(${target_name}
                              PRIVATE NPY_NO_DEPRECATED_API=NPY_1_9_API_VERSION)
