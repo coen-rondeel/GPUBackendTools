@@ -242,7 +242,7 @@ class _CudaBackend(Backend):
             ) from e
 
         try:
-            cupy_cuda_ver = cupy.cuda.get_local_runtime_version() // 1000
+            cupy_cuda_ver = cupy.cuda.runtime.runtimeGetVersion() // 1000
         except RuntimeError as e:
             raise SoftwareException("CuPy could not detect runtime version") from e
 
